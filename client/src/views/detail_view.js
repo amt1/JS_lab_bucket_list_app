@@ -7,9 +7,9 @@ const BucketListItemView = function (container) {
 BucketListItemView.prototype.render = function (bucketListItem) {
   const bucketListItemContainer = document.createElement("li");
   bucketListItemContainer.classList.add("bucket-list-item");
-  const name = this.createHeading(bucketListItem.bucket_list_item);
+  const name = this.createHeading(bucketListItem.bucketListItem);
   bucketListItemContainer.appendChild(name);
-  console.log('details: ', bucketListItem.bucket_list_item_details);
+//  console.log('details: ', bucketListItem.bucket_list_item_details);
   console.log('details: ', bucketListItem.bucketListItemDetails);
   const detailText = this.createDetail(bucketListItem.bucketListItemDetails);
 //  ​const detailText = this.createDetail(bucketListItem.bucketListItemDetails);
