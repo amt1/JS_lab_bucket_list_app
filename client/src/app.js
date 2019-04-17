@@ -4,8 +4,14 @@ const BucketList = require('./models/model.js');
 
 document.addEventListener('DOMContentLoaded', () => {
   const bucketListForm = document.querySelector('form#bucket-list-form');
-  // const FormView = new FormView(bucketListForm);
-  // FormView.bindEvents();
+  const formView = new FormView(bucketListForm);
+  formView.bindEvents();
 
+  const bucketListContainer = document.querySelector('section#bucket-list-container');
+    const bucketListView = new ListView(bucketListContainer);
+    bucketListView.bindEvents();
 
+  const bucketList = new BucketList();
+    bucketList.bindEvents();
+    bucketList.getData();
 });
