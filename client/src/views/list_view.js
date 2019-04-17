@@ -1,5 +1,5 @@
 const PubSub = require('../helpers/pub_sub.js');
-const ListView = require('./detail_view.js');
+const BucketListItemView = require('./detail_view.js');
 
 const ListView = function (container) {
   this.container = container;

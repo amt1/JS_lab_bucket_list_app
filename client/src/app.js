@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const formView = new FormView(bucketListForm);
   formView.bindEvents();
 
-  const bucketListContainer = document.querySelector('section#bucket-list-container');
+  const bucketListContainer = document.querySelector('ul#bucket-list');
     const bucketListView = new ListView(bucketListContainer);
     bucketListView.bindEvents();
 
