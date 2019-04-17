@@ -14,6 +14,7 @@ ListView.prototype.bindEvents = function () {
 ListView.prototype.render = function (bucketList) {
   this.container.innerHTML = '';
   const bucketListItemView = new BucketListItemView(this.container);
+  console.log('bucketList: ', bucketList);
   bucketList.forEach((bucketListItem) => bucketListItemView.render(bucketListItem));
 };
 
