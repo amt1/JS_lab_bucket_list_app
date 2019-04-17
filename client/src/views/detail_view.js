@@ -15,9 +15,9 @@ BucketListItemView.prototype.render = function (bucketListItem) {
 //  ​const detailText = this.createDetail(bucketListItem.bucketListItemDetails);
   bucketListItemContainer.appendChild(detailText);
   // bucketListItemContainer.appendChild(detailText);
-
-  // ​const deleteButton = this.createDeleteButton(bucketListItem._id);
-  // bucketListItemContainer.appendChild(deleteButton);
+//  ​const deleteButton = this.createDeleteButton(bucketListItem._id);
+const deleteButton = this.createDeleteButton(bucketListItem._id);
+  bucketListItemContainer.appendChild(deleteButton);
  // ​this.container.appendChild(bucketListItemContainer);
  this.container.appendChild(bucketListItemContainer);
 };
@@ -33,17 +33,17 @@ BucketListItemView.prototype.createDetail = function (textContent) {
   detail.textContent = textContent;
   return detail;
 };
-// ​
-// BucketListItemView.prototype.createDeleteButton = function (bucketListItemId) {
-//   const button = document.createElement('button');
-//   button.classList.add('delete-btn');
-//   button.value = bucketListItemId;
-//   ​
-//   button.addEventListener('click', (evt) => {
-//    PubSub.publish('BucketListItemView:delete-clicked', evt.target.value);
-//   });
-//   ​
-//   return button;
-// };
-// ​
+
+BucketListItemView.prototype.createDeleteButton = function (bucketListItemId) {
+
+  const button = document.createElement('button');
+  button.classList.add('delete-btn');
+  button.value = bucketListItemId;
+  button.textContent = "Delete";
+  button.addEventListener('click', (evt) => {
+   PubSub.publish('BucketListItemView:delete-clicked', evt.target.value)
+ });
+  return button;
+};
+
 module.exports = BucketListItemView;

@@ -7,7 +7,7 @@ const BucketList = function () {
 };
 
 BucketList.prototype.bindEvents = function () {
-  PubSub.subscribe('FormView:delete-clicked', (evt) => {
+  PubSub.subscribe('BucketListItemView:delete-clicked', (evt) => {
     this.deleteBucketListItem(evt.detail);
   });
 
@@ -35,7 +35,7 @@ BucketList.prototype.postBucketListItem = function (bucketListItem) {
 BucketList.prototype.deleteBucketListItem = function (bucketListItemId) {
   this.request.delete(bucketListItemId)
     .then((bucketList) => {
-      PubSub.publish('BucketList:data-loaded', games);
+      PubSub.publish('BucketList:data-loaded', bucketList);
     })
     .catch(console.error);
 };
