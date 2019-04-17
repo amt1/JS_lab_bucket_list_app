@@ -22,8 +22,16 @@ section#form {
   clear: both;
 }
 
+section#bucket-list {
+  display: flex;
+  justify-content: center space-around;
+}
+
 li.bucket-list-item {
+  display: inline-block;
   width: 250px;
   background-color: white;
-  border: 1px solid gray;
+  border: 2px solid gray;
+  padding: 2em;
+  margin: 1em;
 }
